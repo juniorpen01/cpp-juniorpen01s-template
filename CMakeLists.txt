@@ -18,7 +18,9 @@ add_custom_command(
 add_library(juniorpen01s_template_core STATIC src/direction.cpp)
 add_library(juniorpen01s_template::core ALIAS juniorpen01s_template_core)
 target_include_directories(juniorpen01s_template_core PUBLIC include)
-target_link_libraries(juniorpen01s_template_core PUBLIC raylib)
+target_link_libraries(juniorpen01s_template_core PUBLIC raylib fmt::fmt)
+target_compile_options(juniorpen01s_template_core
+                       PUBLIC -Weverything -Wno-c++98-compat -Werror)
 
 include(CTest)
 foreach(testSource IN ITEMS tests/direction.cpp)
@@ -40,6 +42,14 @@ FetchContent_Declare(
   GIT_SHALLOW ON
   SYSTEM)
 FetchContent_MakeAvailable(raylib)
+
+FetchContent_Declare(
+  fmt
+  GIT_REPOSITORY https://github.com/fmtlib/fmt
+  GIT_TAG 11.2.0
+  GIT_SHALLOW ON
+  SYSTEM)
+FetchContent_MakeAvailable(fmt)
 
 FetchContent_Declare(
   doctest

@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <fmt/core.h>
 #include <raylib.h>
 
 int main(void) {
@@ -10,7 +9,7 @@ int main(void) {
   // FIX: No idea how to do more stuff
   // PERF: This does less stuff as time increases
   // TEST: Null pointer was dereferenced
-  std::cout << "hello juniorpen01s template\n";
+  fmt::println("hello juniorpen01s template");
 
   InitWindow(800, 800, "juniorpen01's Template");
 
