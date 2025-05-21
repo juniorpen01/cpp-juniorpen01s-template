@@ -9,6 +9,8 @@ int main(void) {
   // FIX: No idea how to do more stuff
   // PERF: This does less stuff as time increases
   // TEST: Null pointer was dereferenced
+  //  See this test? It it does require two spaces.
+  //  There's a period!!!
   fmt::println("hello juniorpen01s template");
 
   InitWindow(800, 800, "juniorpen01's Template");
